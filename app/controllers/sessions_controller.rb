@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
 
   def create
-   
+
     # After entering a name and email value in the /auth/developer
     # path and submitting the form, you will see a pretty-print of
     # the authentication data object that comes from the "developer"
     # strategy. In production, we'll swap this strategy for something
     # like 'github' or 'facebook' or some other authentication broker
-    
+
     pp request.env['omniauth.auth']
 
     # We're going to save the authentication information in the session
